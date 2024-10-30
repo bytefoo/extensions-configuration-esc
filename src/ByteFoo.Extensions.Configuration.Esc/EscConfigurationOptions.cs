@@ -35,8 +35,6 @@ namespace ByteFoo.Extensions.Configuration.Esc
 
         public string PulumiAccessToken { get; private set; }
 
-        public bool UseCache { get; set; }
-
         internal IEnumerable<Func<string, ValueTask<string>>> ValueMappers => _valueMappers;
 
         public EscConfigurationOptions Connect(
@@ -82,12 +80,6 @@ namespace ByteFoo.Extensions.Configuration.Esc
             }
 
             EscPath = escPath;
-            return this;
-        }
-
-        public EscConfigurationOptions Cache(bool useCache = false)
-        {
-            UseCache = useCache;
             return this;
         }
 
