@@ -46,7 +46,6 @@ class Build : NukeBuild
             ArtifactsDirectory.DeleteDirectory();
             SourceDirectory.GlobDirectories("**/bin", "**/obj").ForEach(path => path.DeleteDirectory());
             TestsDirectory.GlobDirectories("**/bin", "**/obj").ForEach(path => path.DeleteDirectory());
-            OutputDirectory.CreateOrCleanDirectory();
         });
 
     Target Compile => _ => _
@@ -82,8 +81,6 @@ class Build : NukeBuild
 
     [Parameter]
     string NuGetSource => "https://api.nuget.org/v3/index.json";
-
-    AbsolutePath OutputDirectory => RootDirectory / "output";
 
     Target Pack => _ => _
         .DependsOn(Compile)
