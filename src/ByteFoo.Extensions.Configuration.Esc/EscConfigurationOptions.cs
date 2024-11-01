@@ -38,7 +38,7 @@ namespace ByteFoo.Extensions.Configuration.Esc
         internal IEnumerable<Func<string, ValueTask<string>>> ValueMappers => _valueMappers;
 
         /// <summary>
-        /// Connect to Pulumi Esc.  This method must be called before any other configuration options are set.  
+        ///     Connect to Pulumi Esc.  This method must be called before any other configuration options are set.
         /// </summary>
         /// <param name="orgName">Pulumi Esc Organization Name.</param>
         /// <param name="projectName">Pulumi Esc Project Name.</param>
@@ -47,12 +47,17 @@ namespace ByteFoo.Extensions.Configuration.Esc
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         public EscConfigurationOptions Connect(
+            string pulumiAccessToken,
             string orgName,
             string projectName,
-            string environmentName,
-            string? pulumiAccessToken = null
+            string environmentName
         )
         {
+            if (string.IsNullOrWhiteSpace(pulumiAccessToken))
+            {
+                throw new ArgumentNullException(nameof(pulumiAccessToken));
+            }
+
             if (string.IsNullOrWhiteSpace(orgName))
             {
                 throw new ArgumentNullException(nameof(orgName));
