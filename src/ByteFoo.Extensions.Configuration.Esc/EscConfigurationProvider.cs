@@ -40,8 +40,12 @@ namespace ByteFoo.Extensions.Configuration.Esc
 
         private async Task InitializeAsync(CancellationToken cancellationToken = default)
         {
-            _escConfig.TryLoad(out Dictionary<string, string> data);
-           
+            _escConfig.TryLoad(out Dictionary<string, string> data, out var exception);
+            if (exception != null)
+            {
+                throw exception;
+            }
+
             data = await FilterKeyValues(data).ConfigureAwait(false);
 
             var mappedData = await MapValues(data).ConfigureAwait(false);
