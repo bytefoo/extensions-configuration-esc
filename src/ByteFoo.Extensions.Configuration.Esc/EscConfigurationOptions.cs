@@ -50,14 +50,9 @@ namespace ByteFoo.Extensions.Configuration.Esc
             string orgName,
             string projectName,
             string environmentName,
-            string? pulumiAccessToken
+            string? pulumiAccessToken = null
         )
         {
-            if (string.IsNullOrWhiteSpace(pulumiAccessToken))
-            {
-                throw new ArgumentNullException(nameof(pulumiAccessToken));
-            }
-
             if (string.IsNullOrWhiteSpace(orgName))
             {
                 throw new ArgumentNullException(nameof(orgName));
