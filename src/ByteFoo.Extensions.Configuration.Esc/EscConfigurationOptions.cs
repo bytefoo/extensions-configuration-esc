@@ -33,7 +33,7 @@ namespace ByteFoo.Extensions.Configuration.Esc
 
         public string ProjectName { get; private set; } = "default";
 
-        public string? PulumiAccessToken { get; private set; }
+        public string PulumiAccessToken { get; private set; }
 
         internal IEnumerable<Func<string, ValueTask<string>>> ValueMappers => _valueMappers;
 
