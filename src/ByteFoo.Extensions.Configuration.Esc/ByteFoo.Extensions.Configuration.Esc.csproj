@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Esc" Version="1.0.25">
+		<PackageReference Include="Esc" Version="1.0.26">
 			<PrivateAssets>none</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Nerdbank.GitVersioning" Version="3.6.146">
