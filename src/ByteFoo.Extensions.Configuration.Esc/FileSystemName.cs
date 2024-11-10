@@ -1,4 +1,4 @@
-﻿#if NETSTANDARD2_0
+﻿#if NET6_0
 
 // This code was introduced in .NET Core 2.1
 
