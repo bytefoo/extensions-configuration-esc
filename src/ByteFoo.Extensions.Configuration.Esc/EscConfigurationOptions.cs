@@ -35,6 +35,10 @@ namespace ByteFoo.Extensions.Configuration.Esc
 
         public string PulumiAccessToken { get; private set; }
 
+        public bool? UseCache { get; private set; }
+
+        public TimeSpan CacheExpiration { get; private set; } = TimeSpan.FromHours(4);
+
         internal IEnumerable<Func<string, ValueTask<string>>> ValueMappers => _valueMappers;
 
         /// <summary>

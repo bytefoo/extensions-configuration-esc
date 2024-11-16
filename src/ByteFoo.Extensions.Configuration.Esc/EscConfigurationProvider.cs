@@ -23,6 +23,8 @@ namespace ByteFoo.Extensions.Configuration.Esc
                 OrgName = _options.OrgName,
                 ProjectName = _options.ProjectName,
                 EnvironmentName = _options.EnvironmentName,
+                UseCache = _options.UseCache,
+                CacheExpiration = _options.CacheExpiration
             };
 
             if (!string.IsNullOrWhiteSpace(options.EscPath))
