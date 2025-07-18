@@ -7,7 +7,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Esc" Version="1.0.68">
+		<PackageReference Include="Esc" Version="1.0.72">
 			<PrivateAssets>none</PrivateAssets>
 		</PackageReference>
 
