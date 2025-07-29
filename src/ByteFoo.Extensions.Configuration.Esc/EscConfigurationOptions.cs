@@ -37,7 +37,7 @@ namespace ByteFoo.Extensions.Configuration.Esc
 
         public bool? UseCache { get; private set; }
 
-        public TimeSpan CacheExpiration { get; private set; } = TimeSpan.FromHours(4);
+        public TimeSpan CacheExpiration { get; private set; }
 
         internal IEnumerable<Func<string, ValueTask<string>>> ValueMappers => _valueMappers;
 
@@ -93,6 +93,13 @@ namespace ByteFoo.Extensions.Configuration.Esc
             }
 
             EscPath = escPath;
+            return this;
+        }
+
+        public EscConfigurationOptions Cache(bool useCache = false, TimeSpan? cacheExpiration = null)
+        {
+            UseCache = useCache;
+            CacheExpiration = cacheExpiration ?? TimeSpan.FromHours(4);
             return this;
         }
 
